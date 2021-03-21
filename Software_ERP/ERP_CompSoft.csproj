@@ -1,0 +1,1232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94BB69DA-7436-4766-93F3-0F7CBA690B66}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP</RootNamespace>
+    <AssemblyName>ERP_CompSoft</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ERP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ERP.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Formulários Padrão\f0003.cs">
+      <Link>Forms\f0003.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0003.designer.cs">
+      <Link>Forms\f0003.designer.cs</Link>
+      <DependentUpon>f0003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0004.cs">
+      <Link>Forms\f0004.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0004.designer.cs">
+      <Link>Forms\f0004.designer.cs</Link>
+      <DependentUpon>f0004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0007.cs">
+      <Link>Forms\f0007.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0007.designer.cs">
+      <Link>Forms\f0007.designer.cs</Link>
+      <DependentUpon>f0007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0024.cs">
+      <Link>Forms\f0024.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0024.designer.cs">
+      <Link>Forms\f0024.designer.cs</Link>
+      <DependentUpon>f0024.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0045.cs">
+      <Link>Forms\f0045.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0045.designer.cs">
+      <Link>Forms\f0045.designer.cs</Link>
+      <DependentUpon>f0045.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0046.cs">
+      <Link>Forms\f0046.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0046.designer.cs">
+      <Link>Forms\f0046.designer.cs</Link>
+      <DependentUpon>f0046.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0047.cs">
+      <Link>Forms\f0047.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0047.designer.cs">
+      <Link>Forms\f0047.designer.cs</Link>
+      <DependentUpon>f0047.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0065.cs">
+      <Link>Forms\f0065.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0065.designer.cs">
+      <Link>Forms\f0065.designer.cs</Link>
+      <DependentUpon>f0065.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0074.cs">
+      <Link>Forms\f0074.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Formulários Padrão\f0074.designer.cs">
+      <Link>Forms\f0074.designer.cs</Link>
+      <DependentUpon>f0074.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\clsCarregaDados.cs" />
+    <Compile Include="Class\clsControleEstoque.cs" />
+    <Compile Include="Class\clsEmissaoNotaFiscal.cs" />
+    <Compile Include="Class\CNAB\clsCNAB.cs" />
+    <Compile Include="Class\Financeiro\clsConsiliacaoFinanceira.cs" />
+    <Compile Include="Class\Financeiro\clsVerificacoesFinanceiras.cs" />
+    <Compile Include="Class\Impostos\clsImpostos_NotaFiscal.cs" />
+    <Compile Include="Class\NFe\clsCartaCorrecao_NFe.cs" />
+    <Compile Include="Class\NFe\clsCancela_NFe.cs" />
+    <Compile Include="Class\NFe\clsEnvio_Retorno_NFe.cs" />
+    <Compile Include="Class\NFe\clsEnviar_XML_Email.cs" />
+    <Compile Include="Class\NFe\clsMensagensNota.cs" />
+    <Compile Include="Class\NFe\clsSituacao_NFe.cs" />
+    <Compile Include="Class\NFe\clsImprimirDanfe.cs" />
+    <Compile Include="Class\NFe\Gerar NFe\clsGerarDadosNFe.cs" />
+    <Compile Include="Class\NFe\Gerar NFe\clsGerarNFe.cs" />
+    <Compile Include="Class\NFPaulista\clsGerarDadosNFPaulista.cs" />
+    <Compile Include="Class\NFPaulista\clsGerarNFPaulista.cs" />
+    <Compile Include="Class\NFPaulista\clsNFP_TrataWS.cs" />
+    <Compile Include="Class\PrintUSB.cs" />
+    <Compile Include="Forms\f0091.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0091.Designer.cs">
+      <DependentUpon>f0091.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0077.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0077.Designer.cs">
+      <DependentUpon>f0077.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0001.Designer.cs">
+      <DependentUpon>f0001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0002.Designer.cs">
+      <DependentUpon>f0002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0005.Designer.cs">
+      <DependentUpon>f0005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0006.Designer.cs">
+      <DependentUpon>f0006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0008.Designer.cs">
+      <DependentUpon>f0008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0009.Designer.cs">
+      <DependentUpon>f0009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0010.designer.cs">
+      <DependentUpon>f0010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0011.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0011.designer.cs">
+      <DependentUpon>f0011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0012.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0012.designer.cs">
+      <DependentUpon>f0012.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0013.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0013.Designer.cs">
+      <DependentUpon>f0013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0014.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0014.Designer.cs">
+      <DependentUpon>f0014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0015.Designer.cs">
+      <DependentUpon>f0015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0016.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0016.Designer.cs">
+      <DependentUpon>f0016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0017.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0017.designer.cs">
+      <DependentUpon>f0017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0018.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0018.designer.cs">
+      <DependentUpon>f0018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0019.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0019.designer.cs">
+      <DependentUpon>f0019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0020.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0020.designer.cs">
+      <DependentUpon>f0020.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0021.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0021.Designer.cs">
+      <DependentUpon>f0021.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0022.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0022.Designer.cs">
+      <DependentUpon>f0022.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0023.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0023.Designer.cs">
+      <DependentUpon>f0023.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0025.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0025.designer.cs">
+      <DependentUpon>f0025.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0026.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0026.designer.cs">
+      <DependentUpon>f0026.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0027.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0027.Designer.cs">
+      <DependentUpon>f0027.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0028.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0028.designer.cs">
+      <DependentUpon>f0028.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0029.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0029.designer.cs">
+      <DependentUpon>f0029.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0030.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0030.Designer.cs">
+      <DependentUpon>f0030.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0031.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0031.Designer.cs">
+      <DependentUpon>f0031.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0032.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0032.Designer.cs">
+      <DependentUpon>f0032.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0033.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0033.Designer.cs">
+      <DependentUpon>f0033.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0034.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0034.Designer.cs">
+      <DependentUpon>f0034.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0035.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0035.Designer.cs">
+      <DependentUpon>f0035.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0036.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0036.Designer.cs">
+      <DependentUpon>f0036.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0037.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0037.Designer.cs">
+      <DependentUpon>f0037.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0038.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0038.Designer.cs">
+      <DependentUpon>f0038.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0039.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0039.Designer.cs">
+      <DependentUpon>f0039.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0040.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0040.Designer.cs">
+      <DependentUpon>f0040.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0041.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0041.Designer.cs">
+      <DependentUpon>f0041.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0042.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0042.Designer.cs">
+      <DependentUpon>f0042.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0043.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0043.Designer.cs">
+      <DependentUpon>f0043.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0044.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0044.Designer.cs">
+      <DependentUpon>f0044.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0048.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0048.designer.cs">
+      <DependentUpon>f0048.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0049.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0049.designer.cs">
+      <DependentUpon>f0049.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0050.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0050.Designer.cs">
+      <DependentUpon>f0050.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0051.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0051.Designer.cs">
+      <DependentUpon>f0051.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0052.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0052.Designer.cs">
+      <DependentUpon>f0052.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0053.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0053.Designer.cs">
+      <DependentUpon>f0053.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0054.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0054.Designer.cs">
+      <DependentUpon>f0054.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0055.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0055.Designer.cs">
+      <DependentUpon>f0055.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0056.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0056.Designer.cs">
+      <DependentUpon>f0056.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0057.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0057.designer.cs">
+      <DependentUpon>f0057.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0058.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0058.Designer.cs">
+      <DependentUpon>f0058.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0059.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0059.Designer.cs">
+      <DependentUpon>f0059.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0060.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0060.Designer.cs">
+      <DependentUpon>f0060.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0062.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0062.Designer.cs">
+      <DependentUpon>f0062.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0063.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0063.Designer.cs">
+      <DependentUpon>f0063.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0064.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0064.Designer.cs">
+      <DependentUpon>f0064.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0066.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0066.Designer.cs">
+      <DependentUpon>f0066.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0067.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0067.Designer.cs">
+      <DependentUpon>f0067.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0068.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0068.Designer.cs">
+      <DependentUpon>f0068.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0069.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0069.Designer.cs">
+      <DependentUpon>f0069.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0070.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0070.Designer.cs">
+      <DependentUpon>f0070.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0071.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0071.Designer.cs">
+      <DependentUpon>f0071.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0072.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0072.Designer.cs">
+      <DependentUpon>f0072.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0073.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0073.Designer.cs">
+      <DependentUpon>f0073.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0075.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0075.Designer.cs">
+      <DependentUpon>f0075.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0076.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0076.Designer.cs">
+      <DependentUpon>f0076.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0078.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0078.Designer.cs">
+      <DependentUpon>f0078.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0079.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0079.Designer.cs">
+      <DependentUpon>f0079.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0080.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0080.Designer.cs">
+      <DependentUpon>f0080.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0081.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0081.Designer.cs">
+      <DependentUpon>f0081.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0082.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0082.Designer.cs">
+      <DependentUpon>f0082.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0083.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0083.Designer.cs">
+      <DependentUpon>f0083.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0084.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0084.Designer.cs">
+      <DependentUpon>f0084.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0085.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0085.Designer.cs">
+      <DependentUpon>f0085.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0086.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0086.Designer.cs">
+      <DependentUpon>f0086.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0087.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0087.Designer.cs">
+      <DependentUpon>f0087.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0088.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0088.Designer.cs">
+      <DependentUpon>f0088.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0089.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0089.Designer.cs">
+      <DependentUpon>f0089.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\f0090.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\f0090.Designer.cs">
+      <DependentUpon>f0090.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0019.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0019.Designer.cs">
+      <DependentUpon>r0019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0018.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0018.Designer.cs">
+      <DependentUpon>r0018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rBoleto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rBoleto.Designer.cs">
+      <DependentUpon>rBoleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Modelo_r0000.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Modelo_r0000.Designer.cs">
+      <DependentUpon>Modelo_r0000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0001.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0001.Designer.cs">
+      <DependentUpon>r0001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0002.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0002.Designer.cs">
+      <DependentUpon>r0002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0003.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0003.Designer.cs">
+      <DependentUpon>r0003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0004.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0004.Designer.cs">
+      <DependentUpon>r0004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0005.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0005.Designer.cs">
+      <DependentUpon>r0005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0006.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0006.Designer.cs">
+      <DependentUpon>r0006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0007.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0007.Designer.cs">
+      <DependentUpon>r0007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0008.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0008.Designer.cs">
+      <DependentUpon>r0008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0009.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0009.Designer.cs">
+      <DependentUpon>r0009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0010.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0010.Designer.cs">
+      <DependentUpon>r0010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0011.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0011.Designer.cs">
+      <DependentUpon>r0011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0012.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0012.Designer.cs">
+      <DependentUpon>r0012.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0013.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0013.Designer.cs">
+      <DependentUpon>r0013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0014.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0014.Designer.cs">
+      <DependentUpon>r0014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0015.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0015.Designer.cs">
+      <DependentUpon>r0015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0016.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0016.Designer.cs">
+      <DependentUpon>r0016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\r0017.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\r0017.Designer.cs">
+      <DependentUpon>r0017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rDanfe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rDanfe.Designer.cs">
+      <DependentUpon>rDanfe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="..\Formulários Padrão\f0003.resx">
+      <Link>Forms\f0003.resx</Link>
+      <DependentUpon>f0003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0004.resx">
+      <Link>Forms\f0004.resx</Link>
+      <DependentUpon>f0004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0007.resx">
+      <Link>Forms\f0007.resx</Link>
+      <DependentUpon>f0007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0024.resx">
+      <Link>Forms\f0024.resx</Link>
+      <DependentUpon>f0024.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0045.resx">
+      <Link>Forms\f0045.resx</Link>
+      <DependentUpon>f0045.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0046.resx">
+      <Link>Forms\f0046.resx</Link>
+      <DependentUpon>f0046.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0047.resx">
+      <Link>Forms\f0047.resx</Link>
+      <DependentUpon>f0047.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0065.resx">
+      <Link>Forms\f0065.resx</Link>
+      <DependentUpon>f0065.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Formulários Padrão\f0074.resx">
+      <Link>Forms\f0074.resx</Link>
+      <DependentUpon>f0074.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0091.resx">
+      <DependentUpon>f0091.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0077.resx">
+      <DependentUpon>f0077.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0001.resx">
+      <DependentUpon>f0001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0002.resx">
+      <DependentUpon>f0002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0005.resx">
+      <DependentUpon>f0005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0006.resx">
+      <DependentUpon>f0006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0008.resx">
+      <DependentUpon>f0008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0009.resx">
+      <DependentUpon>f0009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0010.resx">
+      <DependentUpon>f0010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0011.resx">
+      <DependentUpon>f0011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0012.resx">
+      <DependentUpon>f0012.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0013.resx">
+      <DependentUpon>f0013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0014.resx">
+      <DependentUpon>f0014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0015.resx">
+      <DependentUpon>f0015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0016.resx">
+      <DependentUpon>f0016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0017.resx">
+      <DependentUpon>f0017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0018.resx">
+      <DependentUpon>f0018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0019.resx">
+      <DependentUpon>f0019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0020.resx">
+      <DependentUpon>f0020.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0021.resx">
+      <DependentUpon>f0021.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0022.resx">
+      <DependentUpon>f0022.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0023.resx">
+      <DependentUpon>f0023.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0025.resx">
+      <DependentUpon>f0025.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0026.resx">
+      <DependentUpon>f0026.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0027.resx">
+      <DependentUpon>f0027.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0028.resx">
+      <DependentUpon>f0028.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0029.resx">
+      <DependentUpon>f0029.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0030.resx">
+      <DependentUpon>f0030.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0031.resx">
+      <DependentUpon>f0031.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0032.resx">
+      <DependentUpon>f0032.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0033.resx">
+      <DependentUpon>f0033.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0034.resx">
+      <DependentUpon>f0034.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0035.resx">
+      <DependentUpon>f0035.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0036.resx">
+      <DependentUpon>f0036.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0037.resx">
+      <DependentUpon>f0037.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0038.resx">
+      <DependentUpon>f0038.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0039.resx">
+      <DependentUpon>f0039.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0040.resx">
+      <DependentUpon>f0040.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0041.resx">
+      <DependentUpon>f0041.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0042.resx">
+      <DependentUpon>f0042.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0043.resx">
+      <DependentUpon>f0043.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0044.resx">
+      <DependentUpon>f0044.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0048.resx">
+      <DependentUpon>f0048.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0049.resx">
+      <DependentUpon>f0049.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0050.resx">
+      <DependentUpon>f0050.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0051.resx">
+      <DependentUpon>f0051.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0052.resx">
+      <DependentUpon>f0052.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0053.resx">
+      <DependentUpon>f0053.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0054.resx">
+      <DependentUpon>f0054.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0055.resx">
+      <DependentUpon>f0055.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0056.resx">
+      <DependentUpon>f0056.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0057.resx">
+      <DependentUpon>f0057.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0058.resx">
+      <DependentUpon>f0058.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0059.resx">
+      <DependentUpon>f0059.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0060.resx">
+      <DependentUpon>f0060.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0062.resx">
+      <DependentUpon>f0062.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0063.resx">
+      <DependentUpon>f0063.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0064.resx">
+      <DependentUpon>f0064.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0066.resx">
+      <DependentUpon>f0066.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0067.resx">
+      <DependentUpon>f0067.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0068.resx">
+      <DependentUpon>f0068.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0069.resx">
+      <DependentUpon>f0069.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0070.resx">
+      <DependentUpon>f0070.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0071.resx">
+      <DependentUpon>f0071.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0072.resx">
+      <DependentUpon>f0072.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0073.resx">
+      <DependentUpon>f0073.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0075.resx">
+      <DependentUpon>f0075.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0076.resx">
+      <DependentUpon>f0076.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0078.resx">
+      <DependentUpon>f0078.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0079.resx">
+      <DependentUpon>f0079.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0080.resx">
+      <DependentUpon>f0080.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0081.resx">
+      <DependentUpon>f0081.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0082.resx">
+      <DependentUpon>f0082.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0083.resx">
+      <DependentUpon>f0083.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0084.resx">
+      <DependentUpon>f0084.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0085.resx">
+      <DependentUpon>f0085.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0086.resx">
+      <DependentUpon>f0086.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0087.resx">
+      <DependentUpon>f0087.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0088.resx">
+      <DependentUpon>f0088.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0089.resx">
+      <DependentUpon>f0089.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\f0090.resx">
+      <DependentUpon>f0090.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0019.resx">
+      <DependentUpon>r0019.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0018.resx">
+      <DependentUpon>r0018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rBoleto.resx">
+      <DependentUpon>rBoleto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Modelo_r0000.resx">
+      <DependentUpon>Modelo_r0000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0001.resx">
+      <DependentUpon>r0001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0002.resx">
+      <DependentUpon>r0002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0003.resx">
+      <DependentUpon>r0003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0004.resx">
+      <DependentUpon>r0004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0005.resx">
+      <DependentUpon>r0005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0006.resx">
+      <DependentUpon>r0006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0007.resx">
+      <DependentUpon>r0007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0008.resx">
+      <DependentUpon>r0008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0009.resx">
+      <DependentUpon>r0009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0010.resx">
+      <DependentUpon>r0010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0011.resx">
+      <DependentUpon>r0011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0012.resx">
+      <DependentUpon>r0012.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0013.resx">
+      <DependentUpon>r0013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0014.resx">
+      <DependentUpon>r0014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0015.resx">
+      <DependentUpon>r0015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0016.resx">
+      <DependentUpon>r0016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\r0017.resx">
+      <DependentUpon>r0017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rDanfe.resx">
+      <DependentUpon>rDanfe.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ERP.ico" />
+    <Content Include="Resources\Empresa.ico" />
+    <None Include="Resources\Logo direito.GIF" />
+    <None Include="Resources\Item_Favorito.png" />
+    <None Include="Resources\Confirmar.png" />
+    <None Include="Resources\CompSoft - Sistemas.png" />
+    <None Include="Resources\Cima.png" />
+    <None Include="Resources\Cancelar.png" />
+    <None Include="Resources\Baixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Boleto.NET\Boleto.Net.csproj">
+      <Project>{F173E80B-E36B-48AD-B483-A27F8CA86F3C}</Project>
+      <Name>Boleto.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Generico\CompSoft.csproj">
+      <Project>{FB3ABFFA-AD39-494E-A423-4B7DEDF7F810}</Project>
+      <Name>CompSoft</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

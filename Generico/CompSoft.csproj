@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB3ABFFA-AD39-494E-A423-4B7DEDF7F810}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompSoft</RootNamespace>
+    <AssemblyName>CompSoft</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Bin\Debug\CompSoft.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>512</FileAlignment>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\CompSoft.XML</DocumentationFile>
+    <FileAlignment>2048</FileAlignment>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cf_Bases\cf_AcaoGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_AcaoGrid.Designer.cs">
+      <DependentUpon>cf_AcaoGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Button.Designer.cs">
+      <DependentUpon>cf_Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_CheckBox.Designer.cs">
+      <DependentUpon>cf_CheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_ComboBox.Designer.cs">
+      <DependentUpon>cf_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_DataGrid.Designer.cs">
+      <DependentUpon>cf_DataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_DateEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_DateEdit.Designer.cs">
+      <DependentUpon>cf_DateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_GroupBox.Designer.cs">
+      <DependentUpon>cf_GroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_ImageListBoxItem.cs" />
+    <Compile Include="cf_Bases\cf_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Label.Designer.cs">
+      <DependentUpon>cf_Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_ListBox.Designer.cs">
+      <DependentUpon>cf_ListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_MaskedBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_MaskedBox.Designer.cs">
+      <DependentUpon>cf_MaskedBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Pageframe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Pageframe.Designer.cs">
+      <DependentUpon>cf_Pageframe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Periodo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Periodo.Designer.cs">
+      <DependentUpon>cf_Periodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_RadioButton.Designer.cs">
+      <DependentUpon>cf_RadioButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Report_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Report_CheckBox.Designer.cs">
+      <DependentUpon>cf_Report_CheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Report_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_Report_Label.Designer.cs">
+      <DependentUpon>cf_Report_Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_TextBox.Designer.cs">
+      <DependentUpon>cf_TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\cf_TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\cf_TreeView.Designer.cs">
+      <DependentUpon>cf_TreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewComboCell.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewComboColumn.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewComboEditControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewDatePikerCell.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewDatePikerColumn.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewDatePikerEditControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewLookupCell.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewLookupColumn.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewLookupEditControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewMaskedTextCell.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="cf_Bases\DataGridView\cf_DataGridViewMaskedTextEditControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cf_Bases\Enumeradores.cs" />
+    <Compile Include="Class\cf_Propriedades.cs" />
+    <Compile Include="Class\Data\cf_ControleTabelas.cs" />
+    <Compile Include="Class\Data\cf_Manipula_Registros.cs" />
+    <Compile Include="Class\Data\cf_PrimaryKey.cs" />
+    <Compile Include="Class\Data\cf_ServerDados.cs" />
+    <Compile Include="Class\Functions\cf_CompFuncoes.cs" />
+    <Compile Include="Class\Functions\cf_DadosComputador.cs" />
+    <Compile Include="Class\Functions\cf_MenuBuilder.cs" />
+    <Compile Include="Class\Functions\cf_MessageBox.cs" />
+    <Compile Include="Class\Functions\cf_Modulo.cs" />
+    <Compile Include="Class\Functions\cf_ObjectEntrada.cs" />
+    <Compile Include="Class\Functions\extension_datetime.cs" />
+    <Compile Include="Class\Reports\cf_ImprimirMatricial.cs" />
+    <Compile Include="Class\Reports\cf_PreviewMatricial.cs" />
+    <Compile Include="Class\Reports\cf_TextoFuncoes.cs" />
+    <Compile Include="Class\Reports\frmPreviewMatricial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Reports\frmPreviewMatricial.Designer.cs">
+      <DependentUpon>frmPreviewMatricial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Tools\cf_ Ftp.cs" />
+    <Compile Include="Class\Tools\cf_ArquivoINI.cs" />
+    <Compile Include="Class\Tools\cf_CriarXML.cs" />
+    <Compile Include="Class\Tools\cf_criptografia.cs" />
+    <Compile Include="Class\Tools\cf_Extenso.cs" />
+    <Compile Include="Class\Tools\cf_Impressoras.cs" />
+    <Compile Include="Class\Tools\cf_Mail.cs" />
+    <Compile Include="Class\Tools\cf_RegistroWindows.cs" />
+    <Compile Include="Class\Tools\cf_TrataImagem.cs" />
+    <Compile Include="Class\Tools\cf_Zip.cs" />
+    <Compile Include="Class\Tools\NFe\cf_DadosArquivo_NFe.cs" />
+    <Compile Include="Class\Tools\NFe\cf_DadosWebService.cs" />
+    <Compile Include="Class\Tools\NFe\Tools\cf_AssinaturaDigital.cs" />
+    <Compile Include="Class\Tools\NFe\Tools\cf_AssinaXML.cs" />
+    <Compile Include="Class\Tools\NFe\Tools\cf_Certificado.cs" />
+    <Compile Include="Class\Tools\NFe\Tools\cf_Funcoes.cs" />
+    <Compile Include="Class\Tools\NFe\Tools\cf_ValidadorXMLClass.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_CartaCorrecao_NFe.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_Cancelar_NFe.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_Consulta_Cadastro.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_Consulta_NFe.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_Envia_LoteNFe.cs" />
+    <Compile Include="Class\Tools\NFe\Trata_WebService\cf_VerificaStatus.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Checksums\Adler32.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Checksums\CRC32.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Checksums\IChecksum.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Checksums\StrangeCRC.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\FileSystemScanner.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\INameTransform.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\IScanFilter.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\IScanner.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\NameFilter.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\PathFilter.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Core\StreamUtils.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Encryption\PkzipClassic.cs" />
+    <Compile Include="Class\Tools\ZipFiles\SharpZipBaseException.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Deflater.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Inflater.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\FastZip.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\IEntryFactory.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipConstants.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipEntry.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipEntryFactory.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipException.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipExtraData.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipFile.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipHelperStream.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipInputStream.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipNameTransform.cs" />
+    <Compile Include="Class\Tools\ZipFiles\Zip\ZipOutputStream.cs" />
+    <Compile Include="Form\formBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\formBase.Designer.cs">
+      <DependentUpon>formBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSet.Designer.cs">
+      <DependentUpon>FormSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Formulário Main %28Generico%29\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Formulário Main %28Generico%29\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmAdvancedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmAdvancedSearch.Designer.cs">
+      <DependentUpon>frmAdvancedSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmBuscaCEP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmBuscaCEP.Designer.cs">
+      <DependentUpon>frmBuscaCEP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmGerenciadorRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmGerenciadorRelatorios.Designer.cs">
+      <DependentUpon>frmGerenciadorRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmListaRegistrosPai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmListaRegistrosPai.Designer.cs">
+      <DependentUpon>frmListaRegistrosPai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmMostarLookUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmMostarLookUp.Designer.cs">
+      <DependentUpon>frmMostarLookUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tools\frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\tools\frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IBaseControl.cs" />
+    <Compile Include="Interfaces\IBaseControl_DB.cs" />
+    <Compile Include="Interfaces\IBaseControl_DB_Generic.cs" />
+    <Compile Include="Interfaces\ITextControl_DB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBase.Designer.cs">
+      <DependentUpon>ReportBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBase_Paisagem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBase_Paisagem.Designer.cs">
+      <DependentUpon>ReportBase_Paisagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBase_Retrato.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBase_Retrato.Designer.cs">
+      <DependentUpon>ReportBase_Retrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\autorizeNFE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\cadconsultacadastro4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nfeconsultaprotocolo4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nfeinutilizacao4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nferecepcaoevento4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nferetautorizacao4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nfestatusservico4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NFpaulista_Mod1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cf_Bases\cf_AcaoGrid.resx">
+      <DependentUpon>cf_AcaoGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_Button.resx">
+      <DependentUpon>cf_Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_CheckBox.resx">
+      <DependentUpon>cf_CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_ComboBox.resx">
+      <DependentUpon>cf_ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_DataGrid.resx">
+      <DependentUpon>cf_DataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_DateEdit.resx">
+      <DependentUpon>cf_DateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_GroupBox.resx">
+      <DependentUpon>cf_GroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_Label.resx">
+      <DependentUpon>cf_Label.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_ListBox.resx">
+      <DependentUpon>cf_ListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_MaskedBox.resx">
+      <DependentUpon>cf_MaskedBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_Pageframe.resx">
+      <DependentUpon>cf_Pageframe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_Periodo.resx">
+      <DependentUpon>cf_Periodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_RadioButton.resx">
+      <DependentUpon>cf_RadioButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_Report_Label.resx">
+      <DependentUpon>cf_Report_Label.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_TextBox.resx">
+      <DependentUpon>cf_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cf_Bases\cf_TreeView.resx">
+      <DependentUpon>cf_TreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\Reports\frmPreviewMatricial.resx">
+      <DependentUpon>frmPreviewMatricial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\formBase.resx">
+      <DependentUpon>formBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSet.resx">
+      <DependentUpon>FormSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Formulário Main %28Generico%29\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmAdvancedSearch.resx">
+      <DependentUpon>frmAdvancedSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmBuscaCEP.resx">
+      <DependentUpon>frmBuscaCEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmGerenciadorRelatorios.resx">
+      <DependentUpon>frmGerenciadorRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmListaRegistrosPai.resx">
+      <DependentUpon>frmListaRegistrosPai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmMostarLookUp.resx">
+      <DependentUpon>frmMostarLookUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\tools\frmWait.resx">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBase.resx">
+      <DependentUpon>ReportBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBase_Paisagem.resx">
+      <DependentUpon>ReportBase_Paisagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBase_Retrato.resx">
+      <DependentUpon>ReportBase_Retrato.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Atencao.png" />
+    <None Include="Web References\autorizeNFE\nfeautorizacao4.wsdl" />
+    <None Include="Web References\autorizeNFE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cadconsultacadastro4\cadconsultacadastro4.wsdl" />
+    <None Include="Web References\cadconsultacadastro4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nfeconsultaprotocolo4\nfeconsultaprotocolo4.wsdl" />
+    <None Include="Web References\nfeconsultaprotocolo4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nfeinutilizacao4\nfeinutilizacao4.wsdl" />
+    <None Include="Web References\nfeinutilizacao4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nferecepcaoevento4\nferecepcaoevento4.wsdl" />
+    <None Include="Web References\nferecepcaoevento4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nferetautorizacao4\nferetautorizacao4.wsdl" />
+    <None Include="Web References\nferetautorizacao4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\nfestatusservico4\nfestatusservico4.wsdl" />
+    <None Include="Web References\nfestatusservico4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NFpaulista_Mod1\arquivonf_mod1.wsdl" />
+    <None Include="Web References\NFpaulista_Mod1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atualizar DBs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avancar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar_Atualizacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grid_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grid_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone_Form.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem_Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imprimissao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista_lookup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Manager.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modulos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modulos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Primeiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Servidor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Small_Logo CompSoft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ultimo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vazio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Versão.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Voltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cadconsultacadastro4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_cadconsultacadastro4_CadConsultaCadastro4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeautorizacao4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\autorizeNFE\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeautorizacao4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_autorizeNFE_NFeAutorizacao4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeconsultaprotocolo4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nfeconsultaprotocolo4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeconsultaprotocolo4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_nfeconsultaprotocolo4_NFeConsultaProtocolo4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeinutilizacao4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nfeinutilizacao4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeinutilizacao4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_nfeinutilizacao4_NFeInutilizacao4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nferecepcaoevento4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nferecepcaoevento4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nferecepcaoevento4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_nferecepcaoevento4_NFeRecepcaoEvento4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nferetautorizacao4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nferetautorizacao4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nferetautorizacao4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_nferetautorizacao4_NFeRetAutorizacao4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://homologacao.nfe.fazenda.sp.gov.br/ws/nfestatusservico4.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nfestatusservico4\</RelPath>
+      <UpdateFromURL>https://homologacao.nfe.fazenda.sp.gov.br/ws/nfestatusservico4.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_nfestatusservico4_NFeStatusServico4</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.nfp.fazenda.sp.gov.br/ws/arquivonf_mod1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NFpaulista_Mod1\</RelPath>
+      <UpdateFromURL>https://www.nfp.fazenda.sp.gov.br/ws/arquivonf_mod1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CompSoft_NFpaulista_Mod1_ArquivoNF_Mod1</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\NFpaulista_Mod1\arquivonf_mod1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wait_Silver.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\nfeinutilizacao4\nfeinutilizacao4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\nfeconsultaprotocolo4\nfeconsultaprotocolo4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\cadconsultacadastro4\cadconsultacadastro4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\nferecepcaoevento4\nferecepcaoevento4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\autorizeNFE\nfeautorizacao4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\nfestatusservico4\nfestatusservico4.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\nferetautorizacao4\nferetautorizacao4.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
