@@ -35,6 +35,7 @@ namespace ERP.Forms
             sb.AppendLine("  , p.Imagem");
             sb.AppendLine("  , p.Origem_Produto");
             sb.AppendLine("  , p.EAN");
+            sb.AppendLine("  , p.CEST");
             sb.AppendLine(" from produtos p");
             sb.AppendLine("  inner join unidades_medidas um on um.unidade_medida = p.unidade_medida");
             sb.AppendLine("  inner join classificacoes_fiscais cf on cf.classificacao_fiscal = p.classificacao_fiscal");
@@ -67,6 +68,80 @@ namespace ERP.Forms
 
         #endregion Construtor
 
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((this.FormStatus == TipoFormStatus.Modificando || this.FormStatus == TipoFormStatus.Novo) && this.cboCategoria.SelectedValue != null)
+            {
+                int iSubGrp_Produto = Convert.ToInt32(((DataRowView)this.cboCategoria.SelectedItem)["SubGrupo_Produto"]);
+                this.cboSubGrupo.SelectedValue = iSubGrp_Produto;
+            }
+        }
+
+        private void cboEmpresa_SelectedValueChanged(object sender, EventArgs e)
+        {
+            /*if (this.cboEmpresa != null && this.cboEmpresa.Items.Count > 0 && this.cboEmpresa.SelectedItem != null)
+            {
+                if (this.FormStatus == TipoFormStatus.Modificando || this.FormStatus == TipoFormStatus.Novo)
+                {
+                    this.cboSituacaoTributaria.Enabled = false;
+                    this.cboCSOSN.Enabled = false;
+
+                    if (((DataRowView)this.cboEmpresa.SelectedItem)["regime_tributario"].ToString() == "1")
+                    {
+                        this.cboCSOSN.Enabled = true;
+                        this.cboSituacaoTributaria.SelectedValue = DBNull.Value;
+                    }
+                    else
+                    {
+                        this.cboSituacaoTributaria.Enabled = true;
+                        this.cboCSOSN.SelectedValue = DBNull.Value;
+                    }
+                }
+            }*/
+        }
+
+        private void cboSubGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((this.FormStatus == CompSoft.TipoFormStatus.Modificando || this.FormStatus == CompSoft.TipoFormStatus.Novo) && this.cboSubGrupo.SelectedValue != null)
+            {
+                int iGrp_Produto = Convert.ToInt32(((DataRowView)this.cboSubGrupo.SelectedItem)["Grupo_Produto"]);
+                this.cboGrupoProduto.SelectedValue = iGrp_Produto;
+            }
+        }
+
+        private void chkAtivarQtdePorCaixa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAtivarQtdePorCaixa.Checked)
+            {
+                this.txtQtdeCaixa.Enabled = true;
+            }
+            else
+            {
+                this.txtQtdeCaixa.Enabled = false;
+                this.txtQtdeCaixa.Text = string.Empty;
+            }
+        }
+
+        private void chkICMSEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.FormStatus == CompSoft.TipoFormStatus.Modificando || this.FormStatus == CompSoft.TipoFormStatus.Novo)
+            {
+                this.txtICMS.Enabled = !this.chkICMSEstado.Checked;
+                if (string.IsNullOrEmpty(this.txtICMS.Text))
+                    this.txtICMS.Text = "0";
+            }
+        }
+
+        private void chkProdutoComissionado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.FormStatus == TipoFormStatus.Novo || this.FormStatus == TipoFormStatus.Modificando)
+            {
+                this.txtPorcentagemComissao.Enabled = this.chkProdutoComissionado.Checked;
+                if (!this.chkProdutoComissionado.Checked)
+                    this.txtPorcentagemComissao.Text = string.Empty;
+            }
+        }
+
         private void chkReducaoICMS_CheckedChanged(object sender, EventArgs e)
         {
             if (this.FormStatus == TipoFormStatus.Novo || this.FormStatus == TipoFormStatus.Modificando)
@@ -83,92 +158,11 @@ namespace ERP.Forms
             }
         }
 
-        private void f0032_user_FormStatus_Change()
+        private void chkReducaoST_CheckedChanged(object sender, EventArgs e)
         {
-            this.acTritubos.Status_Form = this.FormStatus;
-
-            this.cboEmpresa_SelectedValueChanged(this, EventArgs.Empty);
-
-            if (this.FormStatus == TipoFormStatus.Novo || this.FormStatus == TipoFormStatus.Modificando)
-            {
-                this.chkProdutoComissionado_CheckedChanged(this, new EventArgs());
-                this.chkReducaoICMS_CheckedChanged(this, new EventArgs());
-                this.chkSubstituicaoTributaria_CheckedChanged(this, new EventArgs());
-                this.chkICMSEstado_CheckedChanged(this, new EventArgs());
-                this.chkAtivarQtdePorCaixa_CheckedChanged(this, new EventArgs());
-            }
-            else
-                this.cmdAbrirImagem.Enabled = false;
-
-            //-- Trata o controle de filtro dos tributos
-            if (this.FormStatus == TipoFormStatus.Pesquisar)
-            {
-                this.cboEmpresaFiltro.Enabled = true;
-                this.cboOrigemFiltro.Enabled = true;
-                this.cboDestinoFiltro.Enabled = true;
-                this.cmdFiltrar.Enabled = true;
-            }
-            else
-            {
-                this.cboEmpresaFiltro.Enabled = false;
-                this.cboOrigemFiltro.Enabled = false;
-                this.cboDestinoFiltro.Enabled = false;
-                this.cmdFiltrar.Enabled = false;
-            }
-        }
-
-        private void f0032_user_AfterRefreshData()
-        {
-            this.grdTributos.DataSource = this.DataSetLocal.Tables["Produtos_Tributos"];
-            this.cboDestinoFiltro.SelectedIndex = -1;
-            this.cboOrigemFiltro.SelectedIndex = -1;
-            this.cboEmpresaFiltro.SelectedIndex = -1;
-
-            try
-            {
-                if (this.DataSetLocal.Tables[this.MainTabela].Rows.Count > 0)
-                {
-                    DataRowView RowView = this.CurrentRow;
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])RowView.Row["Imagem"]);
-
-                    this.picProduto.Image = Image.FromStream(ms);
-                }
-            }
-            catch
-            {
-                this.picProduto.Image = null;
-            }
-        }
-
-        private void f0032_Load(object sender, EventArgs e)
-        {
-            this.acTritubos.Grid_Trabalho = this.grdTributos;
-        }
-
-        private void chkProdutoComissionado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.FormStatus == TipoFormStatus.Novo || this.FormStatus == TipoFormStatus.Modificando)
-            {
-                this.txtPorcentagemComissao.Enabled = this.chkProdutoComissionado.Checked;
-                if (!this.chkProdutoComissionado.Checked)
-                    this.txtPorcentagemComissao.Text = string.Empty;
-            }
-        }
-
-        private bool f0032_user_BeforeSave()
-        {
-            bool bContinuar = true;
-
-            if (this.chkProdutoComissionado.Checked && string.IsNullOrEmpty(this.txtPorcentagemComissao.Text))
-            {
-                bContinuar = false;
-                MsgBox.Show("Informe a porcentagem da comissão do produto."
-                    , "Atenção"
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
-            }
-
-            return bContinuar;
+            this.txtAliquotaReducaoST.Enabled = this.chkReducaoST.Checked;
+            if (!this.chkReducaoST.Checked)
+                this.txtAliquotaReducaoST.Text = string.Empty;
         }
 
         private void chkSubstituicaoTributaria_CheckedChanged(object sender, EventArgs e)
@@ -182,31 +176,6 @@ namespace ERP.Forms
                 this.cboModalidadeICMS_ST.SelectedIndex = -1;
                 this.txtPorcentSubsTrib.Text = string.Empty;
                 this.chkReducaoST.Checked = false;
-            }
-        }
-
-        private void cmdLimpar_Click(object sender, EventArgs e)
-        {
-            this.cboGrupoProduto.SelectedValue = DBNull.Value;
-            this.cboSubGrupo.SelectedValue = DBNull.Value;
-            this.cboCategoria.SelectedValue = DBNull.Value;
-        }
-
-        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((this.FormStatus == TipoFormStatus.Modificando || this.FormStatus == TipoFormStatus.Novo) && this.cboCategoria.SelectedValue != null)
-            {
-                int iSubGrp_Produto = Convert.ToInt32(((DataRowView)this.cboCategoria.SelectedItem)["SubGrupo_Produto"]);
-                this.cboSubGrupo.SelectedValue = iSubGrp_Produto;
-            }
-        }
-
-        private void cboSubGrupo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((this.FormStatus == CompSoft.TipoFormStatus.Modificando || this.FormStatus == CompSoft.TipoFormStatus.Novo) && this.cboSubGrupo.SelectedValue != null)
-            {
-                int iGrp_Produto = Convert.ToInt32(((DataRowView)this.cboSubGrupo.SelectedItem)["Grupo_Produto"]);
-                this.cboGrupoProduto.SelectedValue = iGrp_Produto;
             }
         }
 
@@ -252,16 +221,6 @@ namespace ERP.Forms
             }
         }
 
-        private void chkICMSEstado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.FormStatus == CompSoft.TipoFormStatus.Modificando || this.FormStatus == CompSoft.TipoFormStatus.Novo)
-            {
-                this.txtICMS.Enabled = !this.chkICMSEstado.Checked;
-                if (string.IsNullOrEmpty(this.txtICMS.Text))
-                    this.txtICMS.Text = "0";
-            }
-        }
-
         private void cmdFiltrar_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
@@ -288,47 +247,89 @@ namespace ERP.Forms
             grdTributos.Filtrar_Dados(sb.ToString());
         }
 
-        private void chkReducaoST_CheckedChanged(object sender, EventArgs e)
+        private void cmdLimpar_Click(object sender, EventArgs e)
         {
-            this.txtAliquotaReducaoST.Enabled = this.chkReducaoST.Checked;
-            if (!this.chkReducaoST.Checked)
-                this.txtAliquotaReducaoST.Text = string.Empty;
+            this.cboGrupoProduto.SelectedValue = DBNull.Value;
+            this.cboSubGrupo.SelectedValue = DBNull.Value;
+            this.cboCategoria.SelectedValue = DBNull.Value;
         }
 
-        private void chkAtivarQtdePorCaixa_CheckedChanged(object sender, EventArgs e)
+        private void f0032_Load(object sender, EventArgs e)
         {
-            if (this.chkAtivarQtdePorCaixa.Checked)
+            this.acTritubos.Grid_Trabalho = this.grdTributos;
+        }
+
+        private void f0032_user_AfterRefreshData()
+        {
+            this.grdTributos.DataSource = this.DataSetLocal.Tables["Produtos_Tributos"];
+            this.cboDestinoFiltro.SelectedIndex = -1;
+            this.cboOrigemFiltro.SelectedIndex = -1;
+            this.cboEmpresaFiltro.SelectedIndex = -1;
+
+            try
             {
-                this.txtQtdeCaixa.Enabled = true;
+                if (this.DataSetLocal.Tables[this.MainTabela].Rows.Count > 0)
+                {
+                    DataRowView RowView = this.CurrentRow;
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])RowView.Row["Imagem"]);
+
+                    this.picProduto.Image = Image.FromStream(ms);
+                }
+            }
+            catch
+            {
+                this.picProduto.Image = null;
+            }
+        }
+
+        private bool f0032_user_BeforeSave()
+        {
+            bool bContinuar = true;
+
+            if (this.chkProdutoComissionado.Checked && string.IsNullOrEmpty(this.txtPorcentagemComissao.Text))
+            {
+                bContinuar = false;
+                MsgBox.Show("Informe a porcentagem da comissão do produto."
+                    , "Atenção"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+            }
+
+            return bContinuar;
+        }
+
+        private void f0032_user_FormStatus_Change()
+        {
+            this.acTritubos.Status_Form = this.FormStatus;
+
+            this.cboEmpresa_SelectedValueChanged(this, EventArgs.Empty);
+
+            if (this.FormStatus == TipoFormStatus.Novo || this.FormStatus == TipoFormStatus.Modificando)
+            {
+                this.chkProdutoComissionado_CheckedChanged(this, new EventArgs());
+                this.chkReducaoICMS_CheckedChanged(this, new EventArgs());
+                this.chkSubstituicaoTributaria_CheckedChanged(this, new EventArgs());
+                this.chkICMSEstado_CheckedChanged(this, new EventArgs());
+                this.chkAtivarQtdePorCaixa_CheckedChanged(this, new EventArgs());
+            }
+            else
+                this.cmdAbrirImagem.Enabled = false;
+
+            //-- Trata o controle de filtro dos tributos
+            if (this.FormStatus == TipoFormStatus.Pesquisar)
+            {
+                this.cboEmpresaFiltro.Enabled = true;
+                this.cboOrigemFiltro.Enabled = true;
+                this.cboDestinoFiltro.Enabled = true;
+                this.cmdFiltrar.Enabled = true;
             }
             else
             {
-                this.txtQtdeCaixa.Enabled = false;
-                this.txtQtdeCaixa.Text = string.Empty;
+                this.cboEmpresaFiltro.Enabled = false;
+                this.cboOrigemFiltro.Enabled = false;
+                this.cboDestinoFiltro.Enabled = false;
+                this.cmdFiltrar.Enabled = false;
             }
-        }
-
-        private void cboEmpresa_SelectedValueChanged(object sender, EventArgs e)
-        {
-            /*if (this.cboEmpresa != null && this.cboEmpresa.Items.Count > 0 && this.cboEmpresa.SelectedItem != null)
-            {
-                if (this.FormStatus == TipoFormStatus.Modificando || this.FormStatus == TipoFormStatus.Novo)
-                {
-                    this.cboSituacaoTributaria.Enabled = false;
-                    this.cboCSOSN.Enabled = false;
-
-                    if (((DataRowView)this.cboEmpresa.SelectedItem)["regime_tributario"].ToString() == "1")
-                    {
-                        this.cboCSOSN.Enabled = true;
-                        this.cboSituacaoTributaria.SelectedValue = DBNull.Value;
-                    }
-                    else
-                    {
-                        this.cboSituacaoTributaria.Enabled = true;
-                        this.cboCSOSN.SelectedValue = DBNull.Value;
-                    }
-                }
-            }*/
         }
     }
 }

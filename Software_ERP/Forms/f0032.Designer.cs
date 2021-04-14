@@ -155,6 +155,8 @@
             this.cf_Label32 = new CompSoft.cf_Bases.cf_Label();
             this.cboOrigemFiltro = new CompSoft.cf_Bases.cf_ComboBox();
             this.cf_Label33 = new CompSoft.cf_Bases.cf_Label();
+            this.cf_TextBox1 = new CompSoft.cf_Bases.cf_TextBox();
+            this.cf_Label46 = new CompSoft.cf_Bases.cf_Label();
             this.cf_GroupBox1.SuspendLayout();
             this.cf_GroupBox2.SuspendLayout();
             this.cf_Pageframe1.SuspendLayout();
@@ -662,6 +664,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cf_TextBox1);
+            this.tabPage1.Controls.Add(this.cf_Label46);
             this.tabPage1.Controls.Add(this.txtEAN);
             this.tabPage1.Controls.Add(this.cf_Label45);
             this.tabPage1.Controls.Add(this.chkAtivarQtdePorCaixa);
@@ -1285,7 +1289,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(),
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtInicioVigencia.ReadOnly = false;
-            this.txtInicioVigencia.Size = new System.Drawing.Size(132, 20);
+            this.txtInicioVigencia.Size = new System.Drawing.Size(132, 23);
             this.txtInicioVigencia.Tabela = "produtos_tributos";
             this.txtInicioVigencia.Tabela_INNER = null;
             this.txtInicioVigencia.TabIndex = 7;
@@ -2235,6 +2239,42 @@
             this.cf_Label33.TabIndex = 0;
             this.cf_Label33.Text = "Origem:";
             // 
+            // cf_TextBox1
+            // 
+            this.cf_TextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cf_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cf_TextBox1.Coluna_LookUp = 0;
+            this.cf_TextBox1.ControlSource = "CEST";
+            this.cf_TextBox1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cf_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.cf_TextBox1.Grupo = "";
+            this.cf_TextBox1.Incluir_QueryBy = true;
+            this.cf_TextBox1.Location = new System.Drawing.Point(128, 363);
+            this.cf_TextBox1.LookUp = false;
+            this.cf_TextBox1.MensagemObrigatorio = "Campo obrigatório";
+            this.cf_TextBox1.Name = "cf_TextBox1";
+            this.cf_TextBox1.Obrigatorio = false;
+            this.cf_TextBox1.Qtde_Casas_Decimais = 0;
+            this.cf_TextBox1.Size = new System.Drawing.Size(162, 20);
+            this.cf_TextBox1.SQLStatement = "";
+            this.cf_TextBox1.Tabela = "produtos";
+            this.cf_TextBox1.Tabela_INNER = "p";
+            this.cf_TextBox1.TabIndex = 24;
+            this.cf_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cf_TextBox1.TipoControles = CompSoft.TipoControle.Geral;
+            this.cf_TextBox1.ValorAnterior = "";
+            this.cf_TextBox1.Value = "";
+            // 
+            // cf_Label46
+            // 
+            this.cf_Label46.AutoSize = true;
+            this.cf_Label46.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cf_Label46.Location = new System.Drawing.Point(55, 366);
+            this.cf_Label46.Name = "cf_Label46";
+            this.cf_Label46.Size = new System.Drawing.Size(36, 13);
+            this.cf_Label46.TabIndex = 23;
+            this.cf_Label46.Text = "CEST:";
+            // 
             // f0032
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2409,5 +2449,7 @@
         private CompSoft.cf_Bases.cf_ComboBox cf_ComboBox1;
         private CompSoft.cf_Bases.cf_TextBox txtEAN;
         private CompSoft.cf_Bases.cf_Label cf_Label45;
+        private CompSoft.cf_Bases.cf_TextBox cf_TextBox1;
+        private CompSoft.cf_Bases.cf_Label cf_Label46;
     }
 }
