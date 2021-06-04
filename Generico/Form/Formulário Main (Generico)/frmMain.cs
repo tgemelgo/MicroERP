@@ -177,18 +177,18 @@ namespace CompSoft
                     this.Carrega_Favoritos();
 
                     //-- parametros e cultura do sistema.
-                    CultureInfo forceDotCulture = (CultureInfo)Application.CurrentCulture.Clone();
-                    forceDotCulture.NumberFormat.NumberDecimalSeparator = func.Busca_Propriedade("SeparadorDecimal");
-                    forceDotCulture.NumberFormat.NumberGroupSeparator = func.Busca_Propriedade("SeperadorGrupo");
-                    forceDotCulture.NumberFormat.NumberDecimalDigits = 2;
-                    forceDotCulture.NumberFormat.CurrencyDecimalDigits = 2;
-                    forceDotCulture.NumberFormat.CurrencySymbol = string.Empty;
-                    forceDotCulture.NumberFormat.PercentDecimalDigits = 2;
-                    forceDotCulture.DateTimeFormat.DateSeparator = func.Busca_Propriedade("DataSeparador");
-                    forceDotCulture.DateTimeFormat.ShortDatePattern = func.Busca_Propriedade("FormatoDataAbreviada");
-                    forceDotCulture.DateTimeFormat.ShortTimePattern = func.Busca_Propriedade("FormatoHoraAbreviada");
+                    //CultureInfo forceDotCulture = (CultureInfo)Application.CurrentCulture.Clone();
+                    //forceDotCulture.NumberFormat.NumberDecimalSeparator = func.Busca_Propriedade("SeparadorDecimal");
+                    //forceDotCulture.NumberFormat.NumberGroupSeparator = func.Busca_Propriedade("SeperadorGrupo");
+                    //forceDotCulture.NumberFormat.NumberDecimalDigits = 2;
+                    //forceDotCulture.NumberFormat.CurrencyDecimalDigits = 2;
+                    //forceDotCulture.NumberFormat.CurrencySymbol = string.Empty;
+                    //forceDotCulture.NumberFormat.PercentDecimalDigits = 2;
+                    //forceDotCulture.DateTimeFormat.DateSeparator = func.Busca_Propriedade("DataSeparador");
+                    //forceDotCulture.DateTimeFormat.ShortDatePattern = func.Busca_Propriedade("FormatoDataAbreviada");
+                    //forceDotCulture.DateTimeFormat.ShortTimePattern = func.Busca_Propriedade("FormatoHoraAbreviada");
 
-                    Thread.CurrentThread.CurrentCulture = forceDotCulture;
+                    Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("pt-br");
                     Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("pt-br");
 
                     //-- Ativa a barra de status e mostra todos os parametros

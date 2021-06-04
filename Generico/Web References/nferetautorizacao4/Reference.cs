@@ -23,7 +23,7 @@ namespace CompSoft.nferetautorizacao4 {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="NFeRetAutorizacao4Soap12", Namespace="http://www.portalfiscal.inf.br/nfe/wsdl/NFeRetAutorizacao4")]
@@ -123,11 +123,11 @@ namespace CompSoft.nferetautorizacao4 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void nfeRetAutorizacaoLoteCompletedEventHandler(object sender, nfeRetAutorizacaoLoteCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class nfeRetAutorizacaoLoteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

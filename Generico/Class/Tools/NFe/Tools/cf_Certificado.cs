@@ -37,11 +37,11 @@ namespace CompSoft.NFe
             {
                 X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
                 store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-                X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-                X509Certificate2Collection collection1 = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-                X509Certificate2Collection collection2 = (X509Certificate2Collection)collection.Find(X509FindType.FindByKeyUsage, X509KeyUsageFlags.DigitalSignature, false);
+                X509Certificate2Collection collection = store.Certificates;
+                //X509Certificate2Collection collection1 = collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+                X509Certificate2Collection collection2 = collection.Find(X509FindType.FindByKeyUsage, X509KeyUsageFlags.DigitalSignature, false);
 
-                X509Certificate2Collection scollection = (X509Certificate2Collection)collection2.Find(Tipo_Busca, sValor_Busca, false);
+                X509Certificate2Collection scollection = collection2.Find(Tipo_Busca, sValor_Busca, false);
                 if (scollection.Count == 0)
                 {
                     MsgBox.Show("Nenhum certificado válido foi encontrado com o valor informado: '" + sValor_Busca + "'\r\nSelecione um novo certificado."

@@ -62,8 +62,8 @@ namespace CompSoft.NFe
                 X509Certificate2 _X509Cert = new X509Certificate2();
                 X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
                 store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-                X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-                X509Certificate2Collection collection1 = (X509Certificate2Collection)collection.Find(X509FindType.FindBySubjectDistinguishedName, _xnome, false);
+                X509Certificate2Collection collection = store.Certificates;
+                X509Certificate2Collection collection1 = collection.Find(X509FindType.FindBySubjectDistinguishedName, _xnome, false);
                 if (collection1.Count == 0)
                 {
                     resultado = 2;

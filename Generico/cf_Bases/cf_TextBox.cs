@@ -290,19 +290,19 @@ namespace CompSoft.cf_Bases
                 switch ((TipoControle)nTipoControle)
                 {
                     case TipoControle.Moeda:
-                        int iDecimal = sRetorno.LastIndexOfAny(new char[] { ',', '.' });
-                        if (iDecimal >= 1)
-                        {
-                            string sInicioString = sRetorno.Substring(0, iDecimal);
-                            sInicioString = sInicioString.Replace(".", string.Empty).Replace(",", string.Empty);
-                            sRetorno = sInicioString + sRetorno.Substring(iDecimal);
-                        }
+                        //int iDecimal = sRetorno.LastIndexOfAny(new char[] { ',', '.' });
+                        //if (iDecimal >= 1)
+                        //{
+                        //    sRetorno = string.Concat(sRetorno.Substring(0, iDecimal), '.', sRetorno.Substring(iDecimal +1));
+                        //    //sInicioString = sInicioString.Replace(".", string.Empty).Replace(",", string.Empty);
+                        //    //sRetorno = sInicioString + sRetorno.Substring(iDecimal);
+                        //}
 
-                        sRetorno = sRetorno.Replace(",", ".");
+                        sRetorno = sRetorno.Replace(".", ",");
 
                         if (!string.IsNullOrEmpty(sRetorno))
                         {
-                            decimal newValue = 0;
+                            decimal newValue;
                             if (!decimal.TryParse(sRetorno, out newValue))
                                 sRetorno = "0";
                             else
