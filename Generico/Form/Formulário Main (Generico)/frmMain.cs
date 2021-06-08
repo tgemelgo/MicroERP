@@ -188,8 +188,12 @@ namespace CompSoft
                     //forceDotCulture.DateTimeFormat.ShortDatePattern = func.Busca_Propriedade("FormatoDataAbreviada");
                     //forceDotCulture.DateTimeFormat.ShortTimePattern = func.Busca_Propriedade("FormatoHoraAbreviada");
 
-                    Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("pt-br");
-                    Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("pt-br");
+                    var ci = CultureInfo.GetCultureInfo("pt-br").Clone() as CultureInfo;
+                    ci.NumberFormat.NumberGroupSeparator = "";
+                    ci.NumberFormat.CurrencyGroupSeparator = "";
+                    Thread.CurrentThread.CurrentCulture = ci;
+                    Thread.CurrentThread.CurrentUICulture = ci;
+                    Application.CurrentCulture = ci;
 
                     //-- Ativa a barra de status e mostra todos os parametros
                     this.StatusBar.Visible = true;

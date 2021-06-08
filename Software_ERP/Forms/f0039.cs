@@ -845,32 +845,37 @@ namespace ERP.Forms
                     dValorICMS_Recalculo = 0;
 
                 //-- Busca soma do ICMS dos itens por aliquota de ICMS
-                object oValor = this.DataSetLocal.Tables["Notas_Fiscais_Itens"].Compute("Sum(Valor_ICMS)"
-                    , string.Format("Nota_Fiscal is null and Aliquota_ICMS = {0}", dAliquotaICMS));
-                dValorICMS_Itens = oValor == DBNull.Value ? 0 : Convert.ToDecimal(oValor);
-
-                //-- Calcula novo valor.
-                dValorICMS_Recalculo = Math.Round(((dValorBaseICMS * dAliquotaICMS) / 100), 2, MidpointRounding.AwayFromZero);
-
-                //-- Acumula os totais
-                dValorICMS_TotalItens += dValorICMS_Itens;
-                dValorICMS_TotalRecalculo += dValorICMS_Recalculo;
-
-                //-- Verifica se o valor do recalculo é maior que o valor calculado nos itens.
-                if (dValorICMS_Recalculo > dValorICMS_Itens)
+                try
                 {
-                    DataView dv = new DataView(this.DataSetLocal.Tables["Notas_Fiscais_Itens"]
-                        , string.Format("Nota_Fiscal is null and Aliquota_ICMS = {0}", dAliquotaICMS)
-                        , ""
-                        , DataViewRowState.CurrentRows);
+                    object oValor = this.DataSetLocal.Tables["Notas_Fiscais_Itens"].Compute("Sum(Valor_ICMS)"
+                        , string.Format("Nota_Fiscal is null and Aliquota_ICMS = {0}", dAliquotaICMS));
+                    dValorICMS_Itens = oValor == DBNull.Value ? 0 : Convert.ToDecimal(oValor);
 
-                    decimal dDiferenca = dValorICMS_Recalculo - dValorICMS_Itens;
+                    //-- Calcula novo valor.
+                    dValorICMS_Recalculo = Math.Round(((dValorBaseICMS * dAliquotaICMS) / 100), 2, MidpointRounding.AwayFromZero);
 
-                    //-- altera o valor do item.
-                    dv[dv.Count - 1].BeginEdit();
-                    dv[dv.Count - 1]["Valor_ICMS"] = Convert.ToDecimal(dv[dv.Count - 1]["Valor_ICMS"]) + dDiferenca;
-                    dv[dv.Count - 1].EndEdit();
+                    //-- Acumula os totais
+                    dValorICMS_TotalItens += dValorICMS_Itens;
+                    dValorICMS_TotalRecalculo += dValorICMS_Recalculo;
+
+                    //-- Verifica se o valor do recalculo é maior que o valor calculado nos itens.
+                    if (dValorICMS_Recalculo > dValorICMS_Itens)
+                    {
+                        DataView dv = new DataView(this.DataSetLocal.Tables["Notas_Fiscais_Itens"]
+                            , string.Format("Nota_Fiscal is null and Aliquota_ICMS = {0}", dAliquotaICMS)
+                            , ""
+                            , DataViewRowState.CurrentRows);
+
+                        decimal dDiferenca = dValorICMS_Recalculo - dValorICMS_Itens;
+
+                        //-- altera o valor do item.
+                        dv[dv.Count - 1].BeginEdit();
+                        dv[dv.Count - 1]["Valor_ICMS"] = Convert.ToDecimal(dv[dv.Count - 1]["Valor_ICMS"]) + dDiferenca;
+                        dv[dv.Count - 1].EndEdit();
+                    }
                 }
+                catch
+                { }
             }
 
             if (dValorICMS_TotalRecalculo > dValorICMS_TotalItens)

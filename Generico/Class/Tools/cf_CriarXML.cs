@@ -187,10 +187,10 @@ namespace CompSoft.Tools
             foreach (XmlNode node in list)
             {
                 XmlElement elemento = xml.CreateElement(sNome_Campo);
-                XmlText texto = xml.CreateTextNode(string.Format("{0:n" + iQtdeCasasDecimal.ToString() + "}", dValor_Campo));
+                XmlText texto = xml.CreateTextNode(string.Format("{0:n" + iQtdeCasasDecimal.ToString() + "}", dValor_Campo).Replace(".", "").Replace(",", "."));
                 elemento.AppendChild(texto);
 
-                node.AppendChild((XmlNode)elemento);
+                node.AppendChild(elemento);
             }
         }
 
