@@ -339,13 +339,13 @@ namespace ERP.NFe
             xml.Criar_Campo(sElemento_Prod, "uCom", row_INF["Desc_Unidade_Abrevidado"]);
 
             decimal dValor = Convert.ToDecimal(row_INF["Quantidade"]);
-            xml.Criar_Campo(sElemento_Prod, "qCom", string.Format("{0:n4}", dValor).Replace(',', '.'));
+            xml.Criar_Campo(sElemento_Prod, "qCom", string.Format("{0:n4}", dValor).Replace(".", "").Replace(',', '.'));
 
             dValor = Convert.ToDecimal(row_INF["Valor_Unitario"]);
-            xml.Criar_Campo(sElemento_Prod, "vUnCom", string.Format("{0:n4}", dValor).Replace(',', '.'));
+            xml.Criar_Campo(sElemento_Prod, "vUnCom", string.Format("{0:n4}", dValor).Replace(".", "").Replace(',', '.'));
 
             dValor = Convert.ToDecimal(row_INF["Valor_Total_Item"]);
-            xml.Criar_Campo(sElemento_Prod, "vProd", string.Format("{0:n2}", dValor).Replace(',', '.'));
+            xml.Criar_Campo(sElemento_Prod, "vProd", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
 
             if (row_INF["EAN"] != null && !string.IsNullOrEmpty(row_INF["EAN"].ToString()))
                 xml.Criar_Campo(sElemento_Prod, "cEANTrib", row_INF["EAN"]);
@@ -355,10 +355,10 @@ namespace ERP.NFe
             xml.Criar_Campo(sElemento_Prod, "uTrib", row_INF["Desc_Unidade_Abrevidado"]);
 
             dValor = Convert.ToDecimal(row_INF["Quantidade"]);
-            xml.Criar_Campo(sElemento_Prod, "qTrib", string.Format("{0:n4}", dValor).Replace(',', '.'));
+            xml.Criar_Campo(sElemento_Prod, "qTrib", string.Format("{0:n4}", dValor).Replace(".", "").Replace(',', '.'));
 
             dValor = Convert.ToDecimal(row_INF["Valor_Unitario"]);
-            xml.Criar_Campo(sElemento_Prod, "vUnTrib", string.Format("{0:n4}", dValor).Replace(',', '.'));
+            xml.Criar_Campo(sElemento_Prod, "vUnTrib", string.Format("{0:n4}", dValor).Replace(".", "").Replace(',', '.'));
 
             xml.Criar_Campo(sElemento_Prod, "indTot", "1");
             //-- fim dos campos Prod.
@@ -457,24 +457,24 @@ namespace ERP.NFe
             switch (row_INF["CSOSN"].ToString())
             {
                 case "101":
-                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case "201":
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
 
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
 
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
 
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case "202":
@@ -482,19 +482,19 @@ namespace ERP.NFe
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
 
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
 
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
 
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"] == DBNull.Value ? 0 : row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"] == DBNull.Value ? 0 : row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"] == DBNull.Value ? 0 : row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"] == DBNull.Value ? 0 : row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"] == DBNull.Value ? 0 : row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"] == DBNull.Value ? 0 : row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case "500":
-                    xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", Convert.ToDecimal("0")).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", Convert.ToDecimal("0")).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", Convert.ToDecimal("0")).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", Convert.ToDecimal("0")).Replace(".", "").Replace(',', '.'));
 
                     break;
 
@@ -502,16 +502,16 @@ namespace ERP.NFe
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
 
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
 
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
 
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])));
-                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pCredSN", string.Format("{0:n2}", row_INF["Aliquota_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_Cred_SN"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vCredICMSSN", string.Format("{0:n2}", row_INF["Valor_Cred_SN"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Cred_SN"])).Replace(".", "").Replace(',', '.'));
 
                     break;
             }
@@ -530,43 +530,43 @@ namespace ERP.NFe
             {
                 case 0:
                     xml.Criar_Campo(sXPath_Elemento, "modBC", row_INF["Modalidade_Calculo_ICMS"]);
-                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 10:
                     xml.Criar_Campo(sXPath_Elemento, "modBC", row_INF["Modalidade_Calculo_ICMS"]);
-                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", row_INF["Valor_Base_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Base_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", row_INF["Aliquota_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", row_INF["Valor_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", row_INF["Valor_Base_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_Base_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", row_INF["Aliquota_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", row_INF["Valor_ICMS"] == DBNull.Value ? 0 : Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(".", "").Replace(',', '.'));
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 20:
                     xml.Criar_Campo(sXPath_Elemento, "modBC", row_INF["Modalidade_Calculo_ICMS"]);
                     xml.Criar_Campo(sXPath_Elemento, "pRedBC", row_INF["Percentual_reducao_ICMS"]);
-                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 30:
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 40:
@@ -592,50 +592,50 @@ namespace ERP.NFe
                     //    xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])));
 
                     if (row_INF["Valor_Base_Substituicao_Tributaria"] == DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", 0).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", 0).Replace(".", "").Replace(',', '.'));
                     else
-                        xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "vBCSTRet", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
 
                     if (row_INF["Valor_Base_Substituicao_Tributaria"] == DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pST", string.Format("{0:n2}", 0).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pST", string.Format("{0:n2}", 0).Replace(".", "").Replace(',', '.'));
                     else
-                        xml.Criar_Campo(sXPath_Elemento, "pST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
 
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSSubstituto", string.Format("{0:n2}", 0).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSSubstituto", string.Format("{0:n2}", 0).Replace(".", "").Replace(',', '.'));
 
                     if (row_INF["Valor_Substituicao_Tributaria"] == DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", 0).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", 0).Replace(".", "").Replace(',', '.'));
                     else
-                        xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "vICMSSTRet", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 70:
                     xml.Criar_Campo(sXPath_Elemento, "pRedBC", "---");
-                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(".", "").Replace(',', '.'));
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
 
                 case 90:
-                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", Convert.ToDecimal(row_INF["valor_base_icms"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Aliquota_ICMS"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMS", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_ICMS"])).Replace(".", "").Replace(',', '.'));
                     xml.Criar_Campo(sXPath_Elemento, "modBCST", row_INF["Modalidade_Calculo_ICMS_ST"]);
                     if (row_INF["Percentual_Adicionado_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual adicionado ICMS ST
+                        xml.Criar_Campo(sXPath_Elemento, "pMVAST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Adicionado_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual adicionado ICMS ST
                     if (row_INF["Percentual_Reducao_Substituicao_Tributaria"] != DBNull.Value)
-                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(',', '.')); //-- Percentual de redução ICMS ST
-                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(',', '.'));
-                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(',', '.'));
+                        xml.Criar_Campo(sXPath_Elemento, "pRedBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Percentual_Reducao_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.')); //-- Percentual de redução ICMS ST
+                    xml.Criar_Campo(sXPath_Elemento, "vBCST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Base_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "pICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["aliquota_substituicao_tributaria"])).Replace(".", "").Replace(',', '.'));
+                    xml.Criar_Campo(sXPath_Elemento, "vICMSST", string.Format("{0:n2}", Convert.ToDecimal(row_INF["Valor_Substituicao_Tributaria"])).Replace(".", "").Replace(',', '.'));
                     break;
             }
         }
@@ -652,19 +652,19 @@ namespace ERP.NFe
             if (row_INF["Valor_Base_PIS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Valor_Base_PIS"]);
-                xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
 
             if (row_INF["Aliquota_PIS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Aliquota_PIS"]);
-                xml.Criar_Campo(sXPath_Elemento, "pPIS", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "pPIS", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
 
             if (row_INF["Valor_PIS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Valor_PIS"]);
-                xml.Criar_Campo(sXPath_Elemento, "vPIS", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "vPIS", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
         }
 
@@ -680,19 +680,19 @@ namespace ERP.NFe
             if (row_INF["Valor_Base_COFINS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Valor_Base_COFINS"]);
-                xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "vBC", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
 
             if (row_INF["Aliquota_COFINS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Aliquota_COFINS"]);
-                xml.Criar_Campo(sXPath_Elemento, "pCOFINS", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "pCOFINS", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
 
             if (row_INF["Valor_COFINS"] != DBNull.Value)
             {
                 dValor = Convert.ToDecimal(row_INF["Valor_COFINS"]);
-                xml.Criar_Campo(sXPath_Elemento, "vCOFINS", string.Format("{0:n2}", dValor).Replace(',', '.'));
+                xml.Criar_Campo(sXPath_Elemento, "vCOFINS", string.Format("{0:n2}", dValor).Replace(".", "").Replace(',', '.'));
             }
         }
 
@@ -849,15 +849,15 @@ namespace ERP.NFe
             sb.Append("</nFat>");
 
             sb.Append("<vOrig>");
-            sb.Append(Convert.ToDecimal(row_NF["Valor_Total_Nota"]).ToString("n2").Replace(',', '.'));
+            sb.Append(Convert.ToDecimal(row_NF["Valor_Total_Nota"]).ToString("n2").Replace(".", "").Replace(',', '.'));
             sb.Append("</vOrig>");
 
             sb.Append("<vDesc>");
-            sb.Append(Convert.ToDecimal(0).ToString("n2").Replace(',', '.'));
+            sb.Append(Convert.ToDecimal(0).ToString("n2").Replace(".", "").Replace(',', '.'));
             sb.Append("</vDesc>");
 
             sb.Append("<vLiq>");
-            sb.Append(Convert.ToDecimal(row_NF["Valor_Total_Nota"]).ToString("n2").Replace(',', '.'));
+            sb.Append(Convert.ToDecimal(row_NF["Valor_Total_Nota"]).ToString("n2").Replace(".", "").Replace(',', '.'));
             sb.Append("</vLiq>");
 
             sb.Append("</fat>");
@@ -876,7 +876,7 @@ namespace ERP.NFe
                 sb.Append("</dVenc>");
 
                 sb.Append("<vDup>");
-                sb.Append(Convert.ToDecimal(row["Valor_Duplicata"]).ToString("n2").Replace(',', '.'));
+                sb.Append(Convert.ToDecimal(row["Valor_Duplicata"]).ToString("n2").Replace(".", "").Replace(',', '.'));
                 sb.Append("</vDup>");
 
                 sb.Append("</dup>");
